@@ -93,20 +93,25 @@ export const ProfessionsPage: React.FC = () => {
       </div>
 
       <Tabs defaultValue="overview" className="w-full">
-        <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="overview" className="flex items-center gap-2">
-            <Briefcase className="h-4 w-4" />
-            Profissões
-          </TabsTrigger>
-          <TabsTrigger value="tasks" className="flex items-center gap-2">
-            <Calendar className="h-4 w-4" />
-            Tarefas Semanais
-          </TabsTrigger>
-          <TabsTrigger value="progress" className="flex items-center gap-2">
-            <TrendingUp className="h-4 w-4" />
-            Meu Progresso
-          </TabsTrigger>
-        </TabsList>
+        {/* 1. Adicionamos um container que permite o scroll horizontal */}
+<div className="overflow-x-auto pb-2">
+  {/* 2. Removemos o grid e o texto pequeno, deixando as abas fluírem */}
+  <TabsList className="inline-flex h-auto p-1 w-full sm:w-auto">
+    {/* 3. Aumentamos o espaçamento para melhor toque e leitura */}
+    <TabsTrigger value="overview" className="flex-1 sm:flex-initial flex items-center gap-2">
+      <Briefcase className="h-4 w-4" />
+      Profissões
+    </TabsTrigger>
+    <TabsTrigger value="tasks" className="flex-1 sm:flex-initial flex items-center gap-2">
+      <Calendar className="h-4 w-4" />
+      Tarefas Semanais
+    </TabsTrigger>
+    <TabsTrigger value="progress" className="flex-1 sm:flex-initial flex items-center gap-2">
+      <TrendingUp className="h-4 w-4" />
+      Meu Progresso
+    </TabsTrigger>
+  </TabsList>
+</div>
 
         <TabsContent value="overview" className="space-y-6">
           <Card className="bg-gradient-to-br from-blue-50 to-purple-50 border-blue-200">

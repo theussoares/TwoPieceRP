@@ -21,7 +21,7 @@ export const EnergySystemPage: React.FC = () => {
       <div className="text-center py-8">
         <h1 className="text-amber-900 mb-4">Sistema de Energias e Níveis</h1>
         <p className="text-amber-700 max-w-4xl mx-auto">
-          Entenda como funcionam as três energias fundamentais do RPG Two Piece ON: Stamina, Haki e Resistência, 
+          Entenda como funcionam as três energias fundamentais do RPG Two Piece RP: Stamina, Haki e Resistência, 
           além do sistema de níveis e distribuição de pontos.
         </p>
       </div>

@@ -138,7 +138,7 @@ export const OrganizationsPage: React.FC = () => {
       <div className="text-center py-8">
         <h1 className="text-amber-900 mb-4">Sistema de Organizações</h1>
         <p className="text-amber-700 max-w-4xl mx-auto">
-          Conheça todas as organizações disponíveis no mundo de Two Piece ON e suas hierarquias detalhadas. 
+          Conheça todas as organizações disponíveis no mundo de Two Piece RP e suas hierarquias detalhadas. 
           Cada organização possui seus próprios objetivos, estrutura de comando e oportunidades únicas para os personagens.
         </p>
       </div>

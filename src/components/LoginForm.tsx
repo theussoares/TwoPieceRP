@@ -60,7 +60,7 @@ export const LoginForm: React.FC = () => {
                 <Anchor className="h-8 w-8 text-amber-100" />
               </div>
             </div>
-            <CardTitle className="text-2xl text-amber-900">Two Piece ON</CardTitle>
+            <CardTitle className="text-2xl text-amber-900">Two Piece RP</CardTitle>
             <CardDescription className="text-amber-700">
               Entre na sua aventura pirata
             </CardDescription>

@@ -106,7 +106,7 @@ export const CharacterSheet: React.FC = () => {
 
   // Campos que jogadores podem editar (tudo exceto raça)
   const canPlayerEdit = (field: string): boolean => {
-    const masterOnlyFields = ['race']; // Apenas a raça é exclusiva do mestre
+    const masterOnlyFields = ['race', 'creationDate']; // Apenas a raça é exclusiva do mestre
     return user?.role === 'master' || !masterOnlyFields.includes(field);
   };
 
@@ -256,20 +256,20 @@ export const CharacterSheet: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <div>
+      <div className="flex flex-col items-start md:flex-row md:!items-center justify-between">
+        <div className="flex w-full justify-between items-baseline">
           <h1 className="text-amber-900">{displayCharacter.name}</h1>
           <p className="text-amber-700">"{displayCharacter.nickname}"</p>
         </div>
         <div className="flex items-center gap-3">
           <Button onClick={copyCharacterSheet} variant="outline" className="bg-purple-50 border-purple-200 text-purple-700 hover:bg-purple-100">
             <Copy className="h-4 w-4 mr-2" />
-            Copiar Ficha
+            <span className="hidden sm:!flex">Copiar Ficha</span>
           </Button>
           {!isEditing ? (
             <Button onClick={handleEdit} className="bg-blue-600 hover:bg-blue-700">
               <Edit3 className="h-4 w-4 mr-2" />
-              Editar
+              <span className="hidden sm:!flex">Editar</span>
             </Button>
           ) : (
             <>
@@ -371,17 +371,19 @@ export const CharacterSheet: React.FC = () => {
 
       {/* Main Character Information */}
       <Tabs defaultValue="basic" className="w-full">
-        <TabsList className="grid w-full grid-cols-8">
-          <TabsTrigger value="basic">Básico</TabsTrigger>
-          <TabsTrigger value="energies">Energias</TabsTrigger>
-          <TabsTrigger value="skills">Habilidades</TabsTrigger>
-          <TabsTrigger value="stats">Estatísticas</TabsTrigger>
-          <TabsTrigger value="organization">Organização</TabsTrigger>
-          <TabsTrigger value="powers">Poderes</TabsTrigger>
-          <TabsTrigger value="inventory">Inventário</TabsTrigger>
-          <TabsTrigger value="background">História</TabsTrigger>
-          <TabsTrigger value="diary">Diário</TabsTrigger>
-        </TabsList>
+        <div className="overflow-x-auto pb-2">
+            <TabsList className="inline-flex h-auto p-1">
+                <TabsTrigger value="basic">Básico</TabsTrigger>
+                <TabsTrigger value="energies">Energias</TabsTrigger>
+                <TabsTrigger value="skills">Habilidades</TabsTrigger>
+                <TabsTrigger value="stats">Estatísticas</TabsTrigger>
+                <TabsTrigger value="organization">Organização</TabsTrigger>
+                <TabsTrigger value="powers">Poderes</TabsTrigger>
+                <TabsTrigger value="inventory">Inventário</TabsTrigger>
+                <TabsTrigger value="background">História</TabsTrigger>
+                <TabsTrigger value="diary">Diário</TabsTrigger>
+            </TabsList>
+        </div>
 
         <TabsContent value="basic" className="space-y-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
